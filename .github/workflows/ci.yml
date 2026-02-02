@@ -16,8 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Deploy em produção 🚀"
-
-    steps:
+    
       - uses: actions/checkout@v4
 
       - name: Build Docker
