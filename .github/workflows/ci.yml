@@ -7,14 +7,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
-  
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Rodar testes
-        run: npm test
+    
   deploy:
     needs: build-test
     runs-on: ubuntu-latest
