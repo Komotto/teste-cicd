@@ -31,18 +31,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "Deploy em produção 🚀"
 
-deploy-prod:
-  needs: build-test
-  runs-on: ubuntu-latest
-  environment:
-    name: production
-    url: https://meusite.com
-  steps:
-    - run: echo "Deploy produção"
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
