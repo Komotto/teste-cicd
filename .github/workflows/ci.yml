@@ -22,3 +22,20 @@ jobs:
 
       - name: Rodar testes
         run: npm test
+  deploy:
+    needs: build-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Deploy em produção 🚀"
+
+deploy-prod:
+  needs: build-test
+  runs-on: ubuntu-latest
+  environment:
+    name: production
+    url: https://meusite.com
+  steps:
+    - run: echo "Deploy produção"
