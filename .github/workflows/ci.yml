@@ -39,3 +39,12 @@ deploy-prod:
     url: https://meusite.com
   steps:
     - run: echo "Deploy produção"
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker
+        run: docker build -t meu-app .
